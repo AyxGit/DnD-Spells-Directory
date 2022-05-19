@@ -86,7 +86,7 @@ export class SpellListComponent implements OnInit {
   spells$: Observable<Spell[]> | undefined;
   spellsFull$: Observable<SpellInfo[]> | undefined;
 
-  pageSize:number = 24
+  pageSize:number = 12
   page:number = 1
   collectionSize = 0;
 

@@ -81,6 +81,10 @@ p{ padding:10px;
   padding: 8px 16px;
   text-decoration: none;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; /* Standard */
 }
 
 .pagination a.active {
