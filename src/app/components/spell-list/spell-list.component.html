@@ -1,5 +1,5 @@
-<div class="title-card">
-  <div class="center">
+<div class="center">
+  <div class="title-card">
 
     <h1>
       <span style="color:brown">D&D </span>5e Spell Reference
@@ -43,13 +43,13 @@
   </div>
 </div>
 <br>
-<div class="title-card">
+<div class="center">
   <div class="loading" *ngIf="!queryComplete"></div>
 </div>
 <!-- <button (click)="miniSearchSpells(this.form.get('search')?.value)"> Test Search</button> -->
 
 <!-- Note to Self Separate into own component -->
-<div class="title-card">
+<div class="center">
   <div *ngIf="queryComplete && (maxPage() > 0)" class="pagination">
     <a (click)="setPage(1)"> &lt;&lt; </a>
     <span *ngFor="let i of (maxPage())|times">
@@ -68,7 +68,7 @@
 <br>
 
 <!-- Note to Self Separate into own component -->
-<div class="title-card">
+<div class="center">
   <div *ngIf="queryComplete && (maxPage() > 0)" class="pagination">
     <a (click)="setPage(1)"> &lt;&lt; </a>
     <span *ngFor="let i of (maxPage())|times">
