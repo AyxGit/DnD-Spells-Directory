@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, Input, OnInit, Renderer2 } from '@angular/core';
 import { Spell, SpellInfo } from 'src/app/types/spells';
 
 @Component({
@@ -22,19 +23,22 @@ export class SpellCardComponent implements OnInit {
   modalClick(value:any){
     //Checks if the element clicked on is the outside Modal Div, if it is, it closes it.
     if((value as HTMLInputElement).id == "OutsideModal"){
-      this.displayModal = false;
+      this.closeModal();
     }
   }
   /**
  * Sets displayModal to true
  */
   openModal(){
+    document.body.classList.add('disable-scroll');
     this.displayModal=true;
   }
   /**
  * Sets displayModal to false
  */
   closeModal(){
+    //this._renderer.removeClass(this.document.body,"disable-scroll");
+    document.body.classList.remove('disable-scroll')
     this.displayModal=false;
   }
 }

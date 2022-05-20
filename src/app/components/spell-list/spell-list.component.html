@@ -50,12 +50,12 @@
 
 <!-- Note to Self Separate into own component -->
 <div class="title-card">
-  <div *ngIf="queryComplete && (this.collectionSize/pageSize > 0)" class="pagination">
+  <div *ngIf="queryComplete && (maxPage() > 0)" class="pagination">
     <a (click)="setPage(1)"> &lt;&lt; </a>
-    <span *ngFor="let i of (this.collectionSize/pageSize)|times">
+    <span *ngFor="let i of (maxPage())|times">
       <a *ngIf="i < page + 4 && i > page - 4" [class.active]="i === this.page" (click)="setPage(i)">{{ i }}</a>
     </span>
-    <a (click)="setPage(this.collectionSize/pageSize)"> &gt;&gt; </a>
+    <a (click)="setPage(maxPage())"> &gt;&gt; </a>
   </div>
 </div>
 
@@ -66,13 +66,14 @@
   </ng-container>
 </div>
 <br>
+
 <!-- Note to Self Separate into own component -->
 <div class="title-card">
-  <div *ngIf="queryComplete && (this.collectionSize/pageSize > 0)" class="pagination">
+  <div *ngIf="queryComplete && (maxPage() > 0)" class="pagination">
     <a (click)="setPage(1)"> &lt;&lt; </a>
-    <span *ngFor="let i of (this.collectionSize/pageSize)|times">
+    <span *ngFor="let i of (maxPage())|times">
       <a *ngIf="i < page + 4 && i > page - 4" [class.active]="i === this.page" (click)="setPage(i)">{{ i }}</a>
     </span>
-    <a (click)="setPage(this.collectionSize/pageSize)"> &gt;&gt; </a>
+    <a (click)="setPage(maxPage())"> &gt;&gt; </a>
   </div>
 </div>

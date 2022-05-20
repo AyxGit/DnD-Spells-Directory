@@ -1,7 +1,7 @@
 <div id="OutsideModal" (click)="modalClick($event?.target)" *ngIf="displayModal" class="modal">
   <!-- Modal content -->
   <div id="InsideModal" class="modal-content">
-    <span class="close" (click)="this.displayModal=false;">&times;</span>
+    <span class="close" (click)="closeModal()">&times;</span>
     <div class="test"><h3>{{spellCard?.name}}</h3></div>
     {{spellCard?.school?.name}} level {{spellCard?.level}} <br>
     <strong>Casting Time: </strong>{{spellCard?.casting_time}} <br>
@@ -19,7 +19,7 @@
 
 
 <div class="card-container">
-  <div class="test"><h3>{{spellCard?.name}}</h3> <button (click)="this.displayModal=true;"class="showMore">Show More</button></div>
+  <div class="test"><h3>{{spellCard?.name}}</h3> <button (click)="openModal()"class="showMore">Show More</button></div>
   {{spellCard?.school?.name}} level {{spellCard?.level}} <br>
   <strong>Casting Time: </strong>{{spellCard?.casting_time}} <br>
   <strong>Range: </strong> {{spellCard?.range}} <br>
