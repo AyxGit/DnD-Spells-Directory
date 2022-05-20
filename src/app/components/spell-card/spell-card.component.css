@@ -6,6 +6,30 @@ h3{
   font-family: "Tinos"
 }
 
+.description{
+  overflow: hidden;
+
+}
+
+.description::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.description::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.description::-webkit-scrollbar-thumb {
+  background:brown;
+}
+
+/* Handle on hover */
+.description::-webkit-scrollbar-thumb:hover {
+  background: #58170d;
+}
+
 
 .card-container{
   background-color: #dad5d5;
@@ -61,6 +85,7 @@ hr{
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  border-radius: 12px;
 }
 
 .close {

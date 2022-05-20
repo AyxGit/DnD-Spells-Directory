@@ -93,13 +93,19 @@ export class SpellListComponent implements OnInit {
     this.collectionSize = collectionSize
   }
 
-
+  //incomplete don't use incomplete text search that just filters for exact copies of name
   simpleFullTextSearch(spellList: SpellInfo[]): SpellInfo[] {
     spellList.filter(spells=>{spells.name == this.form.get('search')?.value})
     return spellList;
   }
 
 
+  maxDisplayedPage(currentPage:number){
+    if (currentPage<3){
+      return currentPage + (5-currentPage)
+    }
+    else return 3
+  }
 
   /**
    * Uses MiniSearch Library to set this.filteredList to filtered search results

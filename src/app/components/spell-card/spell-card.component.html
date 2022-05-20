@@ -7,13 +7,15 @@
     <strong>Casting Time: </strong>{{spellCard?.casting_time}} <br>
     <strong>Range: </strong> {{spellCard?.range}} <br>
     <strong>Components: </strong> {{spellCard?.components}}<br>
+
    <p>{{spellCard?.desc}}</p>
     <div *ngIf="spellCard?.higher_level?.length">
     <h4>Higher Levels</h4>
     <hr>
     {{spellCard?.higher_level}}
     </div>
-  </div>
+
+</div>
 
 </div>
 
@@ -24,12 +26,14 @@
   <strong>Casting Time: </strong>{{spellCard?.casting_time}} <br>
   <strong>Range: </strong> {{spellCard?.range}} <br>
   <strong>Components: </strong> {{spellCard?.components}}<br>
+  <div class="description">
  <p>{{spellCard?.desc}}</p>
   <div *ngIf="spellCard?.higher_level?.length">
   <h4>Higher Levels</h4>
   <hr>
   {{spellCard?.higher_level}}
   </div>
+</div>
 </div>
 
 
