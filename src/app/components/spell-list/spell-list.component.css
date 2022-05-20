@@ -7,6 +7,7 @@ h1{
   text-align: center;
   align-self: center;
   justify-content: center;
+  margin:auto;
 }
 p{ padding:10px;
   text-align: left;
