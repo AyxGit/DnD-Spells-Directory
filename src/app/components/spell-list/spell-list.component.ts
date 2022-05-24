@@ -8,6 +8,7 @@ import { TimesPipe } from 'src/app/directives/times-pipe.pipe';
 import MiniSearch from 'minisearch'
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'spell-list',
@@ -16,7 +17,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class SpellListComponent implements OnInit {
 
-  constructor(private http: HttpClient, private spellService: SpellsService) { }
+  constructor(private http: HttpClient, private spellService: SpellsService, private route: ActivatedRoute) { }
 
   // spells$: Observable<Spell[]> | undefined;
   // spellsFull$: Observable<SpellInfo[]> | undefined;
@@ -35,11 +36,27 @@ export class SpellListComponent implements OnInit {
 
   ngOnInit(): void {
     // this.spells$ = this.spellService.getSpellsSimple();
+    var activeCard = this.route.snapshot.paramMap.get('spellcard')
+    //console.log(activeCard)
 
     this.spellService.getSpellFull().subscribe({
       complete: () => {this.queryComplete = true; }, // completeHandler
       error: (e: any) => {console.error(e);}, // errorHandler
-      next: (output) => {this.spellInfoList = output; this.filteredList = output;this.collectionSize=this.filteredList.length}, // nextHandler
+      next: (output) => {
+        this.spellInfoList = output;
+        this.filteredList = output;
+        this.collectionSize = this.filteredList.length
+        if( activeCard != null){
+          var index = this.filteredList.findIndex(x => x.index === activeCard);
+          console.log(index);
+          this.filteredList[index].displayModal = true;
+          console.log(this.filteredList[index].displayModal)
+         // console.log("yee")
+        }
+
+
+
+      }, // nextHandler
     });
 
     this.form.get('search')?.valueChanges.subscribe((value) => {
@@ -79,7 +96,6 @@ export class SpellListComponent implements OnInit {
   resetPages(){
     this.page = 1
   }
-
 
 
   /**

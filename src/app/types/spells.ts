@@ -32,6 +32,7 @@ export interface SpellInfo{
 	classes: any,
 	subclasses: any,
 	url: string
+  displayModal?: boolean
 }
 
 export interface SpellResponse{

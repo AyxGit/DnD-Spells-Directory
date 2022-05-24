@@ -9,11 +9,13 @@ import { Spell, SpellInfo } from 'src/app/types/spells';
 })
 export class SpellCardComponent implements OnInit {
   @Input() spellCard:SpellInfo | undefined;
-
+  displayModal:boolean | undefined = false ;
   constructor() {}
-  displayModal=false;
+
+  showShareText:boolean = false
 
   ngOnInit(): void {
+    this.displayModal = this.spellCard?.displayModal
   }
 
   /**
@@ -40,5 +42,15 @@ export class SpellCardComponent implements OnInit {
     //this._renderer.removeClass(this.document.body,"disable-scroll");
     document.body.classList.remove('disable-scroll')
     this.displayModal=false;
+  }
+
+  copyLink(){
+    this.showShareText = true;
+    var _this = this;
+    setTimeout(
+      function() {
+        _this.showShareText=false;
+      }, 2000);
+    navigator.clipboard.writeText(window.location.hostname+'/'+this.spellCard?.index)
   }
 }

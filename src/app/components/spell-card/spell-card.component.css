@@ -67,6 +67,7 @@ hr{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
+  padding-bottom:100px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -88,11 +89,22 @@ hr{
   border-radius: 12px;
 }
 
+.copied{
+  padding-top:8px;
+  float:right;
+  font-family: "Tinos";
+}
+
+.smallIcon{
+  height: 10px;
+}
+
 .close {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  padding-left:10px;
 }
 
 .close:hover,
@@ -100,6 +112,15 @@ hr{
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+.visable{
+  visibility: visible;
+  opacity: 1;
+}
+.fade-hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
 }
 
 .showMore {
