@@ -9,6 +9,7 @@ import { SpellCardComponent } from './components/spell-card/spell-card.component
 import { SpellListComponent } from './components/spell-list/spell-list.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { TimesPipe } from './directives/times-pipe.pipe';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TimesPipe } from './directives/times-pipe.pipe';
     SpellCardComponent,
     SpellListComponent,
     LayoutComponent,
-    TimesPipe
+    TimesPipe,
+    ModalComponent
   ],
   imports: [
     FormsModule,

@@ -48,9 +48,9 @@ export class SpellListComponent implements OnInit {
         this.collectionSize = this.filteredList.length
         if( activeCard != null){
           var index = this.filteredList.findIndex(x => x.index === activeCard);
-          console.log(index);
-          this.filteredList[index].displayModal = true;
-          console.log(this.filteredList[index].displayModal)
+         // console.log(index);
+
+          //this.filteredList[index].displayModal = true;
          // console.log("yee")
         }
 
